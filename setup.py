@@ -1,4 +1,4 @@
-from setuptools import setup, Extension
+from setuptools import setup, find_packages
 
 setup(
     name='example_pkg',
@@ -29,7 +29,7 @@ setup(
         'Programming Language :: Python :: 3',
     ],
     package_dir={"":"src"},
-    packages=setuptools.find_packages(where="src"),
+    packages=find_packages(where="src"),
     python_requires=">=3.6",
     install_requires=['numpy','scipy>=1.2.0']
 )
