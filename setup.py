@@ -37,6 +37,6 @@ setup(
     package_dir={"":"src"},
     packages=find_packages(where="src"),
     python_requires=">=3.6",
-    install_requires=['numpy','scipy>=1.2.0'],
+    install_requires=['numpy','scipy>=1.2.0',"sphinx","matplotlib"],
     ext_modules=[libexamplemodule]
 )
