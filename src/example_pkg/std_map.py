@@ -53,7 +53,7 @@ def bar(x):
     An example function to pad out the length of this
     example package.
 
-    Arguemnts
+    Arguments
     ---------
     x : float
         A number to square
