@@ -1,4 +1,10 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages,Extension
+
+libexamplemodule = Extension(
+    'libexample',
+    sources=["src/c_extension/example.c"],
+    include_dirs=["src/c_extension"]
+)
 
 setup(
     name='example_pkg',
@@ -31,5 +37,6 @@ setup(
     package_dir={"":"src"},
     packages=find_packages(where="src"),
     python_requires=">=3.6",
-    install_requires=['numpy','scipy>=1.2.0']
+    install_requires=['numpy','scipy>=1.2.0'],
+    ext_modules=[libexamplemodule]
 )
