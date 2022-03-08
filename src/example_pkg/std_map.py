@@ -8,8 +8,18 @@ _std_mp.restypes=None
 
 def standard_map_trajectory(p0,theta0,K,Npts):
     r"""
-    Generator for a trajectory of the standard map
-    with parameter `K` for initial point (`p0`,`theta0`).
+    Compute a trajectory of the standard map
+    with parameter ``K`` for initial point (``p0,theta0``).
+    The standard map is described by
+
+    .. math::
+        \begin{align}
+        p' &= p + K\sin\theta \\
+        \theta' &= \theta + p'
+        \end{align}
+
+    This function calls a function from the compiled C 
+    extension.
 
     Arguments
     ---------
@@ -37,3 +47,20 @@ def standard_map_trajectory(p0,theta0,K,Npts):
         theta_vals[i] = theta_ptr.contents.value
         _std_mp(theta_ptr,p_ptr,K)
     return theta_vals,p_vals
+
+def bar(x):
+    r"""
+    An example function to pad out the length of this
+    example package.
+
+    Arguemnts
+    ---------
+    x : float
+        A number to square
+
+    Returns
+    -------
+    float :
+        The square of x.
+    """
+    return x*x
